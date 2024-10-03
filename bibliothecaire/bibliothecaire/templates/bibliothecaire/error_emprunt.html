@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Erreur</title>
+</head>
+<body>
+    <h2>Erreur</h2>
+
+
+    <ul class="messages">
+        {% for message in messages %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+
+    <button type="submit"><a href="{% url 'add_emprunt' %}">Retourner à la page d'emprunt</a></button>
+    <button type="submit"><a href="{% url 'bibliothecaire_home'%}">Retour au menu</a></button>
+
+</body>
+</html>

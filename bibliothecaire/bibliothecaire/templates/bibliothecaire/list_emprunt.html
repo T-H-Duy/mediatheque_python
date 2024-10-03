@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des emprunts</title>
+</head>
+<body>
+    <h2>Liste des emprunts en cours</h2>
+    {% for type_display, emprunts in emprunts_par_type.items %}
+    <h3>{{ type_display }}</h3>
+    <ul>
+        {% for emprunt in emprunts %}
+            <li>
+                {{ emprunt.name }} - {{ emprunt.creator }}<br>
+                Emprunté par : {{ emprunt.emprunteur.first_name }} {{ emprunt.emprunteur.last_name }}<br>
+                Date d'emprunt : {{ emprunt.dateEmprunt|date:"d/m/Y"  }}
+                <a href="{% url 'return_emprunt' emprunt.id %}">Retourner le {{ type_display }}</a>
+            </li>
+        {% empty %}
+            <li>Aucun emprunt</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+
+
+    <button type="submit"><a href="{% url 'add_emprunt'%}">Ajouter un emprunt</a></button>
+    <button type="submit"><a href="{% url 'bibliothecaire_home'%}">Retour au menu</a></button>
+
+</body>
+</html>

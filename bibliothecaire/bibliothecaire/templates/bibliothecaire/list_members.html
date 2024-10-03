@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des membres</title>
+</head>
+<body>
+    <h1>Liste des membres inscrits</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for member in members %}
+        <tr>
+            <td>
+                {{member.last_name}}
+            </td>
+            <td>
+                {{member.first_name}}
+            </td>
+            <td>
+                <button type="submit"><a href="{% url 'member_details' member.id %}">Voir profil</a></button>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+   </table>
+    <button type="submit"><a href="{% url 'add_member' %}">Ajouter un membre</a></button>
+    <button type="submit"><a href="{% url 'bibliothecaire_home'%}">Retour au menu</a></button>
+</body>
+</html>

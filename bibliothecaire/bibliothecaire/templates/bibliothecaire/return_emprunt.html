@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Retour de média</title>
+</head>
+<body>
+    <h2>Retourner un média</h2>
+    <p>Voulez-vous retourner ce média?</p>
+    <p><strong>{{ media.name }}</strong> par {{ media.creator }}</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmer le retour</button>
+        <button type="submit"><a href="{% url 'list_emprunt' %}">Annuler</a></button>
+    </form>
+</body>
+</html>

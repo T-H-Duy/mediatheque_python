@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des médias</title>
+</head>
+<body>
+    <h1>Liste des Médias</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Créateur</th>
+                <th>Type</th>
+                <th>Disponibilité</th>
+                <th>Emprunteur</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for media in medias %}
+                <tr>
+                    <td>{{ media.name }}</td>
+                    <td>{{ media.creator }}</td>
+                    <td>{{ media.get_type_media_display }}</td>
+                    <td> {% if media.disponible %}
+                            <span style="color: green;">Disponible</span>
+                         {% else %}
+                            <span style="color: red;">Indisponible</span>
+                         {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

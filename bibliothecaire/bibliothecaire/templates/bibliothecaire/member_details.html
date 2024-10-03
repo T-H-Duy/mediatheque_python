@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Détails du membre</title>
+</head>
+<body>
+
+
+<h1>Notre livre, notre média</h1>
+
+    <h2>Information </h2>
+    <p><strong>Nom:</strong>{{member.last_name}}</p>
+    <p><strong>Prénom:</strong>{{member.first_name}}</p>
+    <p><strong>Email:</strong> {{member.email}}</p>
+    <p><strong>Téléphone:(+33)</strong> {{member.tel}}</p>
+
+    <button type="submit"><a href="{% url 'update_member' id=member.id %}">Modifier le membre</a></button>
+    <button type="submit"><a href="{% url 'delete_member' id=member.id %}">Supprimer</a></button>
+    <button type="submit"><a href="{% url 'list_members'%}">Retourner à la liste des membres</a></button>
+
+</body>
+</html>

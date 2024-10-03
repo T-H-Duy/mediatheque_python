@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Emprunt de média</title>
+</head>
+<body>
+    <h1>Emprunter un Média</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+
+        <button type="submit">Emprunter</button>
+    </form>
+<button type="submit"><a href="{% url 'bibliothecaire_home'%}">Retour au menu</a></button>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modification membre</title>
+</head>
+<body>
+    <h1>Modification du membre {{member.name}}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Enregistrer</button>
+    </form>
+
+    <button type="submit"><a href="{% url 'list_members' %}">Retour à la liste des membres</a></button>
+    <button type="submit"><a href="{% url 'bibliothecaire_home'%}">Retour au menu</a></button>
+</body>
+</html>

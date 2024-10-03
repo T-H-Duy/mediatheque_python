@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil bibliothécaire</title>
+</head>
+<body>
+    <h1>Notre livre, notre média</h1>
+    <h2>Application de gestion bibliothécaire</h2>
+
+    <section>
+        <h3>Membre</h3>
+        <button type="submit"><a href="{% url 'list_members' %}">Liste des membres</a></button>
+        <button type="submit"><a href="{% url 'add_member' %}">Ajouter un membre</a></button>
+    </section>
+
+    <section>
+        <h3>Média</h3>
+        <button type="submit"><a href="{% url 'list_media' %}">Liste des media</a></button>
+        <button type="submit"><a href="{% url 'add_media' %}">Ajouter des media</a></button>
+    </section>
+
+    <section>
+        <h3>Emprunt</h3>
+        <button type="submit"><a href="{% url 'list_emprunt' %}">Liste des emprunts</a></button>
+        <button type="submit"><a href="{% url 'add_emprunt' %}">Ajouter des emprunts</a></button>
+    </section>
+
+</body>
+</html>
